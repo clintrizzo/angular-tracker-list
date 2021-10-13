@@ -1,7 +1,9 @@
 <header>
     <h1>{{ title }}</h1>
-    <app-button color='rgb(135, 206, 250)' text='Hello' (btnClick)='toggleAddTask()'></app-button>
+    <app-button color='rgb(135, 206, 250)' text='Add' (btnClick)='toggleAddTask()'></app-button>
     <!--color and text are being called from the button.components.ts file-->
-    <!--btnClick() was set with an evenet emitter in the button.component.ts file and is being
+    <!--btnClick() was set with an evenet emitter (custom event) in the button.component.ts file and is being
     fired from the header.component.ts file-->
 </header>
+<br>
+<app-tasks></app-tasks>
