@@ -1,1 +1,2 @@
-<p>tasks works!</p>
+<app-task-item *ngFor='let task of tasks' [task]='task'></app-task-item>
+<!--ngFor is used to call in special elemet // [task] is equaled to specific task in the task-item component from the JSON file-->
