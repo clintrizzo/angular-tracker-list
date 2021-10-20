@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable } from 'rxjs';
+//rxjs library for the observable and of
 import {Task} from '../Task'
-import {TASKS} from '../mock-tasks'
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
+  private apiUrl = 'http://localhost:5000/tasks'
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getTasks(): Observable<Task[]> {
-    const tasks = of(TASKS);
-    return tasks;
+    //add observable here and surround observable with arrow brackets
+    return this.http.get<Task[]>(this.apiUrl)
+    //for observables to work we need to define it 
   }
 }
