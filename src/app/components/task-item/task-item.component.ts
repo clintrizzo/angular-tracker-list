@@ -11,9 +11,12 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 export class TaskItemComponent implements OnInit {
   @Input() task!: Task;
   faTrash = faTrash;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onDelete(task) {
+    console.log(task)
   }
 
 }
